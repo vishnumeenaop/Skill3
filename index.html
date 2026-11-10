@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADER GAUTAM JHA - Official Stock Market Learning Community</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Space Grotesk & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        sapphire: {
+                            950: '#030712',
+                            900: '#060E26',
+                            800: '#0C1A40',
+                            700: '#13285C',
+                        },
+                        cyan: {
+                            300: '#6EE7B7',
+                            400: '#22D3EE',
+                            500: '#06B6D4',
+                        },
+                        electric: {
+                            500: '#6366F1',
+                            600: '#4F46E5',
+                        }
+                    },
+                    animation: {
+                        'pulse-glow': 'cyanPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 5s ease-in-out infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        cyanPulse: {
+                            '0%, 100%': { boxShadow: '0 0 25px rgba(34, 211, 238, 0.5), 0 0 50px rgba(99, 102, 241, 0.3)' },
+                            '50%': { boxShadow: '0 0 45px rgba(34, 211, 238, 0.8), 0 0 80px rgba(99, 102, 241, 0.5)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030712;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Sapphire Cyber Tech Grid */
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+        }
+
+        /* Gradient Glow Text */
+        .text-neon-cyan {
+            background: linear-gradient(135deg, #E0F2FE 0%, #22D3EE 50%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphic Sapphire Card */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(12, 26, 64, 0.7) 0%, rgba(6, 14, 38, 0.85) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(34, 211, 238, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(34, 211, 238, 0.4);
+        }
+
+        /* Continuous Ticker Animation */
+        @keyframes scrollTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: scrollTicker 28s linear infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between cyber-grid selection:bg-cyan-500 selection:text-black">
+
+    <!-- Ambient Neon Lights Background -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-1/4 right-0 w-[450px] h-[450px] bg-electric-500/15 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+    <!-- Live Market Ticker -->
+    <div class="bg-slate-950/90 border-b border-cyan-500/20 py-2.5 text-xs text-gray-300 overflow-hidden sticky top-0 z-50 backdrop-blur-md">
+        <div class="w-full overflow-hidden">
+            <div class="animate-ticker font-mono">
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">NIFTY 50:</strong> 24,420.80 <span class="text-cyan-400 font-bold">+145.20 (+0.60%) ⚡</span></span>
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">BANK NIFTY:</strong> 52,380.15 <span class="text-cyan-400 font-bold">+380.50 (+0.73%) 🚀</span></span>
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">FINNIFTY:</strong> 23,610.40 <span class="text-cyan-400 font-bold">+112.30 (+0.48%) 📊</span></span>
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">COMMUNITY STATUS:</strong> <span class="text-cyan-300 font-bold">85,000+ TRADERS LIVE 🟢</span></span>
+                <!-- Loop Repeat -->
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">NIFTY 50:</strong> 24,420.80 <span class="text-cyan-400 font-bold">+145.20 (+0.60%) ⚡</span></span>
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">BANK NIFTY:</strong> 52,380.15 <span class="text-cyan-400 font-bold">+380.50 (+0.73%) 🚀</span></span>
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">FINNIFTY:</strong> 23,610.40 <span class="text-cyan-400 font-bold">+112.30 (+0.48%) 📊</span></span>
+                <span class="px-6 flex items-center gap-2"><strong class="text-white">COMMUNITY STATUS:</strong> <span class="text-cyan-300 font-bold">85,000+ TRADERS LIVE 🟢</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 sm:py-12 flex-grow">
+
+        <!-- Top Header & Branding -->
+        <div class="flex flex-col items-center text-center space-y-6">
+            
+            <!-- Live Status Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-400/40 text-cyan-300 text-xs font-semibold tracking-wide shadow-lg shadow-cyan-500/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                <span>OFFICIAL EDUCATIONAL TELEGRAM CHANNEL</span>
+            </div>
+
+            <!-- Profile Logo Avatar with Cyber Ring -->
+            <div class="relative group">
+                <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full p-1.5 bg-gradient-to-tr from-cyan-400 via-electric-500 to-indigo-500 shadow-2xl shadow-cyan-500/20 animate-float">
+                    <img src="https://iili.io/nPo9a1V.jpg" alt="TRADER GAUTAM JHA" class="w-full h-full object-cover rounded-full border-2 border-slate-950" onerror="this.src='https://placehold.co/160x160/06B6D4/ffffff?text=TGJ'">
+                </div>
+                <!-- Verified Badge -->
+                <div class="absolute bottom-1 right-1 bg-cyan-500 text-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-base font-bold shadow-xl border-2 border-slate-950" title="Verified Educator">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+
+            <!-- Name and Subtitle -->
+            <div class="space-y-3">
+                <h1 class="text-3xl sm:text-5xl font-extrabold font-display text-white tracking-tight">
+                    TRADER GAUTAM JHA
+                </h1>
+                <p class="text-sm sm:text-lg text-gray-300 max-w-xl mx-auto font-medium leading-relaxed">
+                    Master Price Action, Institutional Levels & Stock Market Technical Analysis with India's Leading Educational Trader.
+                </p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-3 gap-3 w-full max-w-md pt-2">
+                <div class="glass-card p-3 rounded-2xl text-center">
+                    <div class="text-xl sm:text-2xl font-extrabold text-cyan-400 font-display">85,000+</div>
+                    <div class="text-[11px] text-gray-400 font-medium mt-0.5">Community Members</div>
+                </div>
+                <div class="glass-card p-3 rounded-2xl text-center">
+                    <div class="text-xl sm:text-2xl font-extrabold text-indigo-400 font-display">100%</div>
+                    <div class="text-[11px] text-gray-400 font-medium mt-0.5">Free Education</div>
+                </div>
+                <div class="glass-card p-3 rounded-2xl text-center">
+                    <div class="text-xl sm:text-2xl font-extrabold text-emerald-400 font-display">Daily</div>
+                    <div class="text-[11px] text-gray-400 font-medium mt-0.5">Chart Breakdowns</div>
+                </div>
+            </div>
+
+            <!-- SINGLE HIGH-CONVERTING TELEGRAM CTA BUTTON -->
+            <div class="w-full max-w-md pt-4 pb-2">
+                <a href="https://t.me/+O9mxe9Ip10RhYzk1" target="_blank" rel="noopener noreferrer" class="group relative flex items-center justify-center gap-3 w-full py-4 sm:py-5 px-6 rounded-2xl bg-gradient-to-r from-cyan-400 via-cyan-500 to-indigo-500 text-slate-950 font-black text-base sm:text-lg font-display tracking-wide uppercase shadow-2xl animate-pulse-glow transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]">
+                    <i class="fa-brands fa-telegram text-3xl text-slate-950 group-hover:rotate-12 transition-transform"></i>
+                    <span>JOIN FREE TELEGRAM CHANNEL</span>
+                    <i class="fa-solid fa-arrow-right text-base group-hover:translate-x-1.5 transition-transform"></i>
+                </a>
+                <div class="flex items-center justify-center gap-2 text-[11px] text-gray-400 mt-3 font-medium">
+                    <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+                    <span>Instant Free Telegram Access • No Paid Guarantee Tips</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Key Feature Highlights -->
+        <div class="mt-12 sm:mt-16 space-y-6">
+            <div class="text-center space-y-1">
+                <h2 class="text-xl sm:text-2xl font-extrabold font-display text-white">What You Gain Inside The Community</h2>
+                <p class="text-xs sm:text-sm text-gray-400">Comprehensive educational resources to build trading discipline</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 shrink-0 text-xl">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Price Action & Levels</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">Daily Nifty & Bank Nifty support/resistance breakdowns and chart structure analysis.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-400/30 flex items-center justify-center text-indigo-400 shrink-0 text-xl">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Risk & Money Management</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">Learn strict stop-loss rules, position sizing tactics, and drawdown control.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 shrink-0 text-xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Live Market Learning</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">Real-time educational updates on market momentum, trend shifts, and volume spikes.</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-400/30 flex items-center justify-center text-purple-400 shrink-0 text-xl">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Mindset & Psychology</h3>
+                        <p class="text-xs text-gray-400 mt-1 leading-relaxed">Master trading discipline, overcome emotional trading, and execute rules systematically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mandatory SEBI F&O Risk Disclosure Box (Meta Ads Requirement) -->
+        <div class="mt-10 p-5 rounded-2xl glass-card border-red-500/30 bg-red-950/10 space-y-3">
+            <div class="flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>SEBI Risk Disclosure on Derivatives Trading</span>
+            </div>
+            <p class="text-[11px] text-gray-300 leading-relaxed">
+                <strong>Risk Warning:</strong> 9 out of 10 individual traders in equity Futures and Options Segment incurred net losses. Over and above the net losses incurred, loss makers spent an additional 28% of net trading losses as transaction costs.
+            </p>
+            <p class="text-[11px] text-gray-400 leading-relaxed border-t border-white/5 pt-2">
+                <strong>Disclaimer:</strong> TRADER GAUTAM JHA is not a SEBI registered investment advisor. All content published in the channel is strictly for educational purposes only. We do not provide profit sharing, guaranteed returns, or stock recommendation services.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer & Agency Credit -->
+    <footer class="bg-slate-950 border-t border-white/10 py-8 px-4 text-center text-xs text-gray-400 mt-12">
+        <div class="max-w-4xl mx-auto space-y-4">
+            
+            <!-- Policy Modal Links -->
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-semibold text-gray-300">
+                <button onclick="openModal('privacyModal')" class="hover:text-cyan-400 transition-colors">Privacy Policy</button>
+                <span>•</span>
+                <button onclick="openModal('termsModal')" class="hover:text-cyan-400 transition-colors">Terms of Service</button>
+                <span>•</span>
+                <button onclick="openModal('disclaimerModal')" class="hover:text-cyan-400 transition-colors">SEBI Disclaimer</button>
+                <span>•</span>
+                <button onclick="openModal('contactModal')" class="hover:text-cyan-400 transition-colors">Contact Us</button>
+            </div>
+
+            <!-- Promoted Credit -->
+            <div class="pt-2 pb-1">
+                <a href="https://t.me/+O9mxe9Ip10RhYzk1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-cyan-300 hover:border-cyan-400/40 transition-all text-[11px] font-medium">
+                    <i class="fa-solid fa-bullhorn text-cyan-400 text-[10px]"></i>
+                    <span>Promoted By <strong class="text-white hover:text-cyan-400">AD SKILL AGENCYY</strong></span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                </a>
+            </div>
+
+            <div class="text-[11px] text-gray-400 space-y-1 max-w-xl mx-auto">
+                <p>© 2026 TRADER GAUTAM JHA. All Rights Reserved.</p>
+                <p class="text-[10px] text-gray-400">
+                    This website is an independent promotional page and is not affiliated with, sponsored by, or endorsed by Meta, Facebook, or Instagram.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Compliance Modals -->
+    <div id="privacyModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-slate-900 max-w-md w-full p-6 rounded-2xl space-y-4 border border-cyan-500/30 text-left">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <h3 class="font-bold text-white text-base">Privacy Policy</h3>
+                <button onclick="closeModal('privacyModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p>We respect your personal privacy. We do not sell or collect personal financial data on this landing page.</p>
+                <p>Redirecting to Telegram occurs via standard encrypted protocols.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="termsModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-slate-900 max-w-md w-full p-6 rounded-2xl space-y-4 border border-cyan-500/30 text-left">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <h3 class="font-bold text-white text-base">Terms of Service</h3>
+                <button onclick="closeModal('termsModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p>By using this website, you agree that all information shared within TRADER GAUTAM JHA's Telegram community is strictly for market literacy and self-education.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="disclaimerModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-slate-900 max-w-md w-full p-6 rounded-2xl space-y-4 border border-cyan-500/30 text-left">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <h3 class="font-bold text-white text-base">SEBI Compliance Disclaimer</h3>
+                <button onclick="closeModal('disclaimerModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p>Educational Purposes Only. We are not registered with SEBI as an advisory firm. Stock trading involves capital risk.</p>
+                <p>Always evaluate your financial risk tolerance or consult a registered financial advisor before trading.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card bg-slate-900 max-w-md w-full p-6 rounded-2xl space-y-4 border border-cyan-500/30 text-left">
+            <div class="flex justify-between items-center border-b border-white/10 pb-3">
+                <h3 class="font-bold text-white text-base">Contact Us</h3>
+                <button onclick="closeModal('contactModal')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+                <p>Reach out directly to TRADER GAUTAM JHA on Telegram for official educational updates and channel inquiries.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Script -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+    </script>
+</body>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1020063064437230');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1020063064437230&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</html>
